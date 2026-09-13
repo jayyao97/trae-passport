@@ -32,6 +32,10 @@ run_static_checks() {
         tests/test_demo_navigation.c main/demo_navigation.c \
         -o "${test_dir}/test_demo_navigation"
     "${test_dir}/test_demo_navigation"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_bloub_math.c main/bloub_math.c \
+        -o "${test_dir}/test_bloub_math"
+    "${test_dir}/test_bloub_math"
     PYTHONDONTWRITEBYTECODE=1 python3 tests/test_verify_firmware.py
     rm -rf "${test_dir}"
     echo "Host tests: PASS"

@@ -98,7 +98,7 @@ esp_err_t bsp_display_init(void) {
         .mosi_io_num = BSP_LCD_MOSI,
         .sclk_io_num = BSP_LCD_SCLK,
         .miso_io_num = -1, .quadwp_io_num = -1, .quadhd_io_num = -1,
-        .max_transfer_sz = BSP_LCD_W * 80 * 2,
+        .max_transfer_sz = BSP_LCD_W * BSP_LCD_H * 2,
     };
     esp_err_t e = spi_bus_initialize(BSP_LCD_SPI_HOST, &bus, SPI_DMA_CH_AUTO);
     if (e != ESP_OK) {
